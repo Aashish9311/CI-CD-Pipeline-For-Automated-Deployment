@@ -10,6 +10,9 @@ WORKDIR /app
 # Copy the requirements file into the container
 COPY requirements.txt .
 
+# Create a directory for the SQLite database inside the container
+RUN mkdir -p /app/database
+
 # Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
