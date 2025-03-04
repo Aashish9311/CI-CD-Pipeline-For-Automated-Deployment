@@ -4,6 +4,9 @@ FROM python:3.12-slim
 # Set the working directory in the container
 WORKDIR /app
 
+# Copy media files into the container
+COPY media /app/media/
+
 # Copy the requirements file into the container
 COPY requirements.txt .
 
