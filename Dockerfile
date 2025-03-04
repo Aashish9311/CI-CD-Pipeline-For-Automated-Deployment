@@ -1,23 +1,48 @@
 # Use Python 3.12 as the base image
-FROM python:3.12-slim
+#FROM python:3.12-slim
 
 # Set the working directory in the container
-WORKDIR /app
+#WORKDIR /app
 
 # Copy media files into the container
 #COPY media /app/media/
 
 # Copy the requirements file into the container
-COPY requirements.txt .
+#COPY requirements.txt .
 
 # Install dependencies from requirements.txt
+#RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the entire project into the container
+#COPY . .
+
+# Expose port 8000 for Django
+#EXPOSE 8888
+
+# Run the Django development server
+#CMD ["python", "manage.py", "runserver", "0.0.0.0:8888"]
+
+
+# Use Python 3.12 as the base image
+FROM python:3.12-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file into the container
+COPY requirements.txt .
+
+# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the entire project into the container
 COPY . .
 
-# Expose port 8000 for Django
+# Expose port 8888 for Django
 EXPOSE 8888
 
-# Run the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8888"]
+# Run Django migrations and start the server
+CMD ["sh", "-c", "python manage.py migrate --noinput && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8888"]
+
+
+
