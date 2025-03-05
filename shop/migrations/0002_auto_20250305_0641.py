@@ -20,7 +20,8 @@ def add_products(apps, schema_editor):
     Product.objects.create(name="Shirt", description="A comfortable cotton shirt.", price=400)
     Product.objects.create(name="Programming Python", description="A book about python programming.", price=120)
     Product.objects.create(name="Mountain Bike", description="A sturdy mountain bicycle.", price=3500)
-    Product.objects.create(name="Wireless Mouse", description="A comfortable wireless mouse.", price=250) # Added this line
+    Product.objects.create(name="Wireless Mouse", description="A comfortable wireless mouse.", price=550) # Added this line
+    Product.objects.create(name="Headphones", description="Over-ear noise-cancelling headphones.", price=5000)  # Added this line
 
 class Migration(migrations.Migration):
 
