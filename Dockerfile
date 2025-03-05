@@ -19,6 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project into the container
 COPY . .
 
+COPY media /app/media
+
+
 # Apply migrations to create tables in the database
 RUN python manage.py migrate --noinput
 
