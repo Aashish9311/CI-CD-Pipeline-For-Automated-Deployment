@@ -6,14 +6,7 @@ __pycache__/
 # Virtual environment
 venv/
 
-# Database files (if using SQLite)
-*.sqlite3
 
-# Static files (if collected elsewhere)
-static/
-
-# Media files (if you don't want them in the image)
-media/
 
 # Docker related files
 Dockerfile
