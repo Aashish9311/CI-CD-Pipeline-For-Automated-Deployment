@@ -22,7 +22,7 @@ def add_products(apps, schema_editor):
     Product.objects.create(name="Mountain Bike", description="A sturdy mountain bicycle.", price=3500)
     Product.objects.create(name="Wireless Mouse", description="A comfortable wireless mouse.", price=550) # Added this line
     Product.objects.create(name="Headphones", description="Over-ear noise-cancelling headphones.", price=5000)  # Added this line
-    Product.objects.create(name="Intern",description="to learn deveops",price=free)
+    Product.objects.create(name="Intern", description="To learn DevOps", price="free")
 class Migration(migrations.Migration):
 
     dependencies = [
